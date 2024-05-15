@@ -1,0 +1,271 @@
+hi everyone welcome to this lecture
+series on OSI I file storage service and
+in this particular module we are going
+to introduce the file storage service
+and look at it some of its
+characteristics my name is Rohit Ryan
+I'm part of the Oracle cloud
+infrastructure team so we have been
+using this slide to show you the range
+of storage services available on OSI I
+starting with local storage block
+storage file storage and object storage
+these have different storage
+architectures in this particular module
+we are going to look into file storage
+service file storage service works on
+our storage architecture in where you
+manage data as a file hierarchy this is
+in contrast to object storage which
+where the of the storage architecture we
+manage data as objects and also in
+contrast to block storage where we
+manage data as blocks within sectors and
+tracks within physical disk drives so
+that's the main Ohio high level overview
+difference between file storage where
+you manage beta as a file hierarchy
+versus block storage where you manage
+data as fixed size blocks or vs. object
+storage where you manage data as objects
+and then we look into some of the
+details in subsequent slides so what are
+the use cases for the file storage
+service there are several use cases some
+of which are related to Oracle
+applications like EBS which which needs
+and works on on file storage
+requirements then you have
+general-purpose file systems there are
+scenarios on big data analytics HPC
+scale-out apps and and several other
+scenarios where our file storage service
+can be used now what are some of the
+features of the file storage service the
+first thing is the service is ad local
+if you have a multi ad region it's it's
+an ad local service supports NFS
+we three protocol it supports network
+lock management for file locking it has
+full POSIX semantics data protection we
+support snapshot capabilities and you
+could create up to 10,000 snapshots per
+file system for security we do support
+security in the sense of encryption for
+data at rest for all file systems and
+metadata and very soon we are also going
+to support encryption in in transit for
+data on on the file systems of course
+you can access the service through the
+console API CL eyes is the case and all
+that you can create 100 file systems and
+to mount targets per ad per account and
+of course these are soft limits you can
+always increase them so let's get into
+some of the details on on what the file
+storage service entails what is a mount
+target what is a file system what is an
+export path etc so before right
+let me have the ability to write on the
+screen so um what is a mount target
+right now I'm showing you a region which
+has to availability domains now it can
+be a single ad region also and all the
+concepts I am going to talk about sort
+of remain the same so we have a region
+two-bit to a DS and just for
+illustration purposes I mean regions
+have three ATS I'm just showing this for
+illustration purposes we have a vc n
+which you if you recall from the VC and
+modules it's a regional service and it's
+running at this particular has this
+particular address space I have two
+subnets a smaller subnets within the vc
+n 10.0.0.0 and ten dot zero dot one dot
+0/24 here right so I create this thing
+called a mount target which is nothing
+but an NFS endpoint that lives in your
+subnet of choice you can choose to have
+a more target created here or in some
+other subnet or in another another ad
+it's specific to an ad as it's shown
+here and mount target has an IP address
+and DNS name that you can use in your
+mount commands so the simple way to
+identify a mount target is you get this
+this private IP address which you could
+use for your for with your file systems
+and the way your NFS clients access the
+file systems is is is going through the
+mount argot so you can see there are two
+and if s-class here in two different
+eighties to different subnets they are
+accessing a file system right here on
+this particular this particular mount
+target amount our gate requires three
+private IP addresses in the in the
+subnet so it's a good practice to not
+use a subnet of slash 30 because a slash
+30 subnet will have only four IP
+addresses so a four three out of the
+four would be taken up by the mount
+target if you have this kind of a
+scenario where you have a mount target
+and also an NFS client and the instance
+and you have one more instance here you
+will run out of IP address spaces
+because because your subnets is too
+small so don't use subnets which are
+slash 30 or smaller and you might ask
+why do we require three private IP
+addresses two of the IP addresses are
+used during the mount target creation
+and the third IP is used for high
+availability and we'll talk about that
+how your TCP connections have to survive
+reboots or if you know mount argot has a
+failure we also this is highly available
+right so how do we ensure that the mount
+argot stays highly available right so
+the third type is used for that we'll
+talk about this in more detail when we
+go into the security section
+so so it's a best practice the
+difference between the previous slide
+one the the key differences between the
+previous slide and and the next slide is
+you can see that right here I have the
+mount target and one of the clients in
+the same subnet now there is no hard
+requirement to will say is that you
+cannot do that right right now you can
+see that mount argot has its own subnets
+and this client instance has its own
+subnet they are running in this ad one
+now placing NFS client and mount target
+in the streams of that can result in IP
+conflicts why because when you create
+them on target
+you are not shown which IP address is
+used for the mount argot like asset
+2.6 you'll see this but there are two
+more I P addresses which get used right
+we don't know what those two are and if
+you don't know those you are one of the
+clients could actually grab one of it
+right one of those IP addresses now it's
+not a requirement but it's a good idea
+to place a fascist mom target in its own
+a subnet the file is still in service
+mount targeting sort subnet where it can
+consume IPS as it needs try to create
+its own subnet and let it run there
+instead of having a single subnet where
+you put them out target as well as you
+put the instances but just again keep in
+mind there is no hard rule which says
+you cannot do that you absolutely can do
+it it's just a good best practice you
+separate them out so we talked about
+mount target and what those are it's an
+NFS endpoint highly available where you
+run your file systems now what is a file
+system file system is the primary
+resource for storing files in this file
+storage service to access your file
+systems you can use an existing mount
+target like your see here this file
+system is running on this mount target
+which was already there or if you don't
+have a mount target you will create a
+new mark on target we'll look into the
+demo and you can see how that works
+as we said in the beginning you can
+create up to 100 file systems per mount
+target it's ad specific seems pretty
+reasonable and then you can access the
+file system through any of the instances
+whether it's virtual machines bare metal
+doesn't matter or you can access from
+on-prem through fast connect or VPN or
+as we write so so we looked at mount
+target what more target is we looked at
+a file system but how do you make all
+this real like how is a file system made
+available so a file system is made
+available through a mount target using
+this concept called export part again a
+file system is made available through a
+mount target through this concept called
+export path export path is the unique
+path specified when the file system is
+as
+sheeted with a mount target when you
+when you create them during the creation
+process so one thing to keep in mind is
+no to file systems associated with the
+same mount target and have overlapping
+export paths so what do i mean by that a
+path like slash example and a part like
+slash example slash path are not allowed
+why because this part is the same
+between these two between these two
+export paths and the system gets
+confused
+it doesn't realize that these are two
+separate file systems right so let's use
+a graphic to to understand that it's so
+that's much simpler so you create a
+mount argot we saw that in couple of
+slides back and it's nothing but and
+highly available at the fest endpoint
+you get a private IP like this right and
+there are two more IP addresses which
+are not shown export path one can be
+something like example one path one and
+this can be your file system one and
+export path 2 can be example to slash
+route example two slash path and here
+you can have your second file system so
+this is how you would create right now
+I'm showing two you could create up to
+hundred file systems per mount target
+now how do you use it right export path
+along with the mount target IP address
+is used to mount the file system to an
+instance all right so what do I mean by
+that you run a command like this typical
+mount command sudo mount this is your
+mount target this is your export path
+separated by a colon here and then this
+is your directory on the
+client instance on which external file
+systems are mounted right so in this
+example here I have mounting file system
+one to this one point and I'm mounting
+file system two to this one point so as
+you create a mount target and a file
+system and the the next step you have to
+do is mount them to an instance trying
+in Austria right so you launch an
+instance you you know install some of
+the utilities and if s utilities if they
+are not there and then you just mount
+them the process is really
+straightforward you we just saw this
+mount command here you create an
+instance you install some of these NFS
+utilities you create a mount point and
+then you you mount the you you you mount
+the filesystem with the mount argot here
+to share the the mount export path here
+the local directory on your instance to
+the mount power point on your instance
+and that's how simple it is to use so
+with that let me jump over to the
+console and show you a quick demo of how
+emphasis file storage service works in
+action thank you for joining this body
+hello everyone welcome to this module
+where we

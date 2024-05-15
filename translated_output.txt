@@ -1,0 +1,271 @@
+Xin chào mọi người đều chào mừng bài giảng này
+loạt trên dịch vụ lưu trữ tệp OSI I và
+Trong mô -đun cụ thể này, chúng tôi sẽ đi
+Để giới thiệu dịch vụ lưu trữ tệp
+và nhìn vào nó một số của nó
+Đặc điểm Tên tôi là Rohit Ryan
+Tôi là một phần của đám mây Oracle
+nhóm cơ sở hạ tầng nên chúng tôi đã
+Sử dụng slide này để hiển thị cho bạn phạm vi
+Dịch vụ lưu trữ có sẵn trên OSI I
+Bắt đầu với khối lưu trữ cục bộ
+Lưu trữ lưu trữ và lưu trữ đối tượng
+Chúng có lưu trữ khác nhau
+kiến trúc trong mô -đun cụ thể này
+Chúng tôi sẽ xem xét lưu trữ tệp
+Dịch vụ lưu trữ tệp dịch vụ hoạt động trên
+Kiến trúc lưu trữ của chúng tôi ở nơi bạn
+Quản lý dữ liệu dưới dạng phân cấp tệp này là
+trái ngược với lưu trữ đối tượng mà
+nơi mà kiến trúc lưu trữ chúng tôi
+quản lý dữ liệu dưới dạng đối tượng và cả trong
+tương phản với lưu trữ khối nơi chúng tôi
+quản lý dữ liệu dưới dạng các khối trong các lĩnh vực và
+Các bản nhạc trong các ổ đĩa vật lý
+Đó là tổng quan cấp cao của Ohio
+Sự khác biệt giữa lưu trữ tệp ở đâu
+bạn quản lý beta như một phân cấp tệp
+so với lưu trữ khối nơi bạn quản lý
+Dữ liệu dưới dạng khối kích thước cố định hoặc so với đối tượng
+Lưu trữ nơi bạn quản lý dữ liệu dưới dạng đối tượng
+Và sau đó chúng tôi xem xét một số
+chi tiết trong các slide tiếp theo, vậy là gì
+Các trường hợp sử dụng cho lưu trữ tệp
+dịch vụ có một số trường hợp sử dụng một số
+trong đó có liên quan đến Oracle
+các ứng dụng như EB cần
+và hoạt động trên lưu trữ tệp
+yêu cầu sau đó bạn có
+hệ thống tệp có mục đích chung có
+Kịch bản về phân tích dữ liệu lớn HPC
+Ứng dụng mở rộng quy mô và một số khác
+Các kịch bản trong đó dịch vụ lưu trữ tệp của chúng tôi
+có thể được sử dụng bây giờ một số
+các tính năng của dịch vụ lưu trữ tệp
+Điều đầu tiên là dịch vụ là quảng cáo cục bộ
+Nếu bạn có một khu vực nhiều quảng cáo, nó là
+Dịch vụ địa phương quảng cáo hỗ trợ NFS
+chúng tôi ba giao thức nó hỗ trợ mạng
+Quản lý khóa để khóa tệp nó có
+Bảo vệ dữ liệu ngữ nghĩa POSIX đầy đủ, chúng tôi
+Hỗ trợ khả năng chụp nhanh và bạn
+có thể tạo tới 10.000 ảnh chụp nhanh mỗi
+hệ thống tệp để bảo mật chúng tôi hỗ trợ
+bảo mật theo nghĩa mã hóa cho
+dữ liệu khi nghỉ ngơi cho tất cả các hệ thống tệp và
+siêu dữ liệu và rất sớm chúng ta cũng sẽ đi
+Để hỗ trợ mã hóa trong quá trình vận chuyển cho
+Dữ liệu trên các hệ thống tệp tất nhiên
+Bạn có thể truy cập dịch vụ thông qua
+api api cl mắt là trường hợp và tất cả
+rằng bạn có thể tạo 100 hệ thống tệp và
+để gắn các mục tiêu cho mỗi quảng cáo cho mỗi tài khoản và
+Tất nhiên đây là những giới hạn mềm bạn có thể
+luôn luôn tăng chúng vì vậy hãy vào
+một số chi tiết về những gì tệp
+Dịch vụ lưu trữ đòi hỏi giá treo là gì
+mục tiêu hệ thống tệp là gì
+đường dẫn xuất khẩu vv vì vậy trước khi phải
+Hãy để tôi có khả năng viết trên
+màn hình để um một mục tiêu gắn kết là gì
+Ngay bây giờ tôi đang cho bạn xem một khu vực
+phải có các miền có sẵn bây giờ nó có thể
+cũng là một khu vực quảng cáo duy nhất và tất cả các
+Các khái niệm tôi sẽ nói về sắp xếp
+vẫn giữ nguyên nên chúng tôi có một khu vực
+hai bit cho một DS và chỉ cho
+mục đích minh họa ý tôi là các vùng
+có ba ATS tôi chỉ hiển thị điều này cho
+mục đích minh họa chúng tôi có một vc n
+bạn sẽ nhớ lại từ VC và
+các mô -đun Đó là một dịch vụ khu vực và nó
+Chạy tại đặc biệt này có cái này
+không gian địa chỉ cụ thể tôi có hai
+Subnets Một mạng con nhỏ hơn trong VC
+n 10.0.0.0 và mười chấm zero chấm một chấm
+0/24 ở đây ngay để tôi tạo ra thứ này
+được gọi là mục tiêu gắn kết không có gì
+Nhưng một điểm cuối NFS sống trong
+mạng con được lựa chọn mà bạn có thể chọn để có
+một mục tiêu hơn được tạo ra ở đây hoặc trong một số
+mạng con khác hoặc trong một quảng cáo khác
+Nó cụ thể cho một quảng cáo như nó được hiển thị
+Ở đây và gắn kết mục tiêu có một địa chỉ IP
+và tên DNS mà bạn có thể sử dụng trong
+gắn các lệnh để cách đơn giản để
+Xác định mục tiêu gắn kết là bạn nhận được cái này
+Địa chỉ IP riêng này mà bạn có thể
+Sử dụng cho bạn với hệ thống tệp của bạn
+và cách khách hàng NFS của bạn truy cập
+Hệ thống tệp là đang trải qua
+Mount Argot để bạn có thể thấy có hai
+Và nếu S-Class ở đây trong hai
+tám mươi đến các mạng con khác nhau
+Truy cập một hệ thống tệp ngay tại đây trên
+Đặc biệt này là giá treo đặc biệt này
+Số lượng mục tiêu Cổng của chúng tôi yêu cầu ba
+địa chỉ IP riêng trong
+mạng con vì vậy nó là một thực hành tốt để không
+Sử dụng mạng con của Slash 30 vì một dấu gạch chéo
+30 mạng con sẽ chỉ có bốn IP
+địa chỉ để bốn ba trong số
+Bốn sẽ được đưa lên bởi giá treo
+mục tiêu nếu bạn có loại
+Kịch bản bạn có mục tiêu gắn kết
+và cũng là một khách hàng NFS và trường hợp
+Và bạn còn một ví dụ nữa ở đây bạn
+sẽ hết khoảng không gian địa chỉ IP
+bởi vì các mạng con của bạn cũng vậy
+nhỏ nên không sử dụng mạng con
+chém 30 hoặc nhỏ hơn và bạn có thể hỏi
+Tại sao chúng tôi yêu cầu ba IP riêng tư
+Địa chỉ hai trong số các địa chỉ IP là
+được sử dụng trong quá trình tạo mục tiêu gắn kết
+và IP thứ ba được sử dụng cho cao
+tính khả dụng và chúng ta sẽ nói về điều đó
+Làm thế nào các kết nối TCP của bạn phải tồn tại
+khởi động lại hoặc nếu bạn biết Mount Argot có một
+Thất bại chúng tôi cũng điều này rất có sẵn
+đúng vậy, làm thế nào để chúng tôi đảm bảo rằng giá treo
+argot vẫn có sẵn rất tốt
+Loại thứ ba được sử dụng cho rằng chúng tôi sẽ
+Nói về điều này chi tiết hơn khi chúng ta
+đi vào phần bảo mật
+Vì vậy, đó là một thực hành tốt nhất
+sự khác biệt giữa các slide trước đó
+một sự khác biệt chính giữa
+slide trước và slide tiếp theo là
+Bạn có thể thấy rằng ngay tại đây tôi có
+gắn kết mục tiêu và một trong những khách hàng trong
+Cùng một mạng con bây giờ không có khó
+yêu cầu sẽ nói là bạn
+không thể làm điều đó ngay bây giờ bạn có thể
+Xem rằng Mount Argot có các mạng con riêng của nó
+Và ví dụ khách hàng này có
+mạng con họ đang chạy trong quảng cáo này
+hiện đang đặt ứng dụng khách NFS và gắn kết mục tiêu
+trong các luồng đó có thể dẫn đến IP
+xung đột tại sao vì khi bạn tạo
+họ trên mục tiêu
+Bạn không được hiển thị địa chỉ IP nào là
+được sử dụng cho mount argot như tài sản
+2.6 bạn sẽ thấy điều này nhưng có hai
+thêm tôi p địa chỉ được sử dụng đúng
+Chúng tôi không biết hai người đó là gì và nếu
+Bạn không biết những người bạn là một trong những
+khách hàng thực sự có thể lấy một trong số đó
+đúng một trong những địa chỉ IP đó bây giờ nó
+Không phải là một yêu cầu nhưng đó là một ý kiến hay
+để đặt một người mẹ phát xít nhắm mục tiêu
+Một mạng con, tệp vẫn đang hoạt động
+Gắn mạng mục tiêu sắp xếp con cái nơi nó có thể
+tiêu thụ IPS vì nó cần cố gắng tạo
+mạng con riêng của nó và để nó chạy ở đó
+thay vì có một mạng con trong đó
+bạn đặt chúng ra mục tiêu cũng như bạn
+đặt các trường hợp nhưng chỉ một lần nữa giữ
+Tâm trí không có quy tắc khó nói
+Bạn không thể làm điều đó mà bạn hoàn toàn có thể làm
+nó chỉ là một cách tốt nhất tốt nhất bạn
+tách chúng ra để chúng tôi đã nói về
+gắn kết mục tiêu và đó là những gì đó là một
+Điểm cuối NFS có sẵn ở nơi bạn
+Chạy hệ thống tệp của bạn ngay bây giờ một tệp là gì
+Hệ thống hệ thống hệ thống là chính
+tài nguyên để lưu trữ tệp trong tệp này
+Dịch vụ lưu trữ để truy cập tệp của bạn
+các hệ thống bạn có thể sử dụng giá treo hiện có
+mục tiêu như bạn thấy ở đây tệp này
+Hệ thống đang chạy trên mục tiêu gắn kết này
+nơi đã ở đó hoặc nếu bạn không
+có một mục tiêu gắn kết, bạn sẽ tạo một
+Dấu mới trên mục tiêu, chúng tôi sẽ xem xét
+bản demo và bạn có thể thấy cách hoạt động của nó
+Như chúng tôi đã nói ngay từ đầu, bạn có thể
+Tạo tối đa 100 hệ thống tệp trên mỗi giá treo
+Nhắm mục tiêu là quảng cáo cụ thể có vẻ đẹp
+hợp lý và sau đó bạn có thể truy cập
+hệ thống tệp thông qua bất kỳ trường hợp nào
+Cho dù đó là máy ảo kim loại trần
+không quan trọng hoặc bạn có thể truy cập từ
+tại chỗ thông qua kết nối nhanh hoặc VPN hoặc
+Khi chúng tôi viết nên chúng tôi đã nhìn vào giá treo
+mục tiêu chúng ta đã xem xét nhiều hơn mục tiêu
+một hệ thống tệp nhưng làm thế nào để bạn tạo ra tất cả
+Điều này thực sự giống như một hệ thống tệp được tạo ra như thế nào
+Có sẵn để một hệ thống tệp được thực hiện
+có sẵn thông qua một mục tiêu gắn kết bằng cách sử dụng
+Khái niệm này được gọi là phần xuất khẩu một lần nữa
+Hệ thống tệp được cung cấp thông qua một
+Gắn kết mục tiêu thông qua khái niệm này được gọi là
+Đường dẫn xuất khẩu đường dẫn xuất khẩu là duy nhất
+đường dẫn được chỉ định khi hệ thống tệp là
+BẰNG
+Tay với mục tiêu gắn kết khi bạn
+Khi bạn tạo ra chúng trong quá trình sáng tạo
+xử lý vì vậy một điều cần ghi nhớ là
+không cho các hệ thống tệp được liên kết với
+cùng một mục tiêu gắn kết và có sự chồng chéo
+xuất khẩu đường dẫn vậy tôi có nghĩa là gì bởi một
+Đường dẫn như ví dụ về chém và một phần như
+Không được phép, con đường chém không được phép
+Tại sao vì phần này giống nhau
+giữa hai người này giữa hai người này
+đường dẫn xuất khẩu và hệ thống được
+bối rối
+nó không nhận ra rằng đây là hai
+Các hệ thống tệp riêng biệt ngay vì vậy hãy sử dụng
+một đồ họa để hiểu rằng nó là như vậy
+điều đó đơn giản hơn nhiều để bạn tạo ra một
+Mount Argot, chúng tôi đã thấy rằng trong cặp vợ chồng
+trượt trở lại và nó không là gì ngoài
+Có sẵn rất nhiều tại điểm cuối lễ hội
+Bạn nhận được một IP riêng như thế này đúng và
+Có hai địa chỉ IP nữa
+không được hiển thị đường dẫn xuất khẩu một
+một cái gì đó giống như ví dụ một con đường một và
+Đây có thể là hệ thống tệp của bạn một và
+Đường dẫn xuất khẩu 2 có thể là ví dụ để chém
+Tuyến đường ví dụ hai đường chém và ở đây
+Bạn có thể có hệ thống tệp thứ hai của mình vì vậy
+Đây là cách bạn sẽ tạo ngay bây giờ
+Tôi đang hiển thị hai bạn có thể tạo lên đến
+Hàng trăm hệ thống tệp cho mỗi mục tiêu gắn kết
+Bây giờ làm thế nào để bạn sử dụng nó đúng đường dẫn xuất khẩu
+cùng với địa chỉ IP mục tiêu gắn kết
+được sử dụng để gắn hệ thống tệp vào một
+ví dụ tất cả đều đúng, vậy tôi có nghĩa là gì
+rằng bạn chạy một lệnh như điển hình này
+Mount Command Sudo Mount Đây là của bạn
+gắn kết mục tiêu Đây là đường dẫn xuất khẩu của bạn
+tách biệt bởi một đại tràng ở đây và sau đó là
+là thư mục của bạn trên
+phiên bản khách hàng trên tệp bên ngoài
+các hệ thống được gắn ngay trong điều này
+Ví dụ ở đây tôi có hệ thống tệp gắn
+một điểm này và tôi đang gắn kết
+hệ thống tệp hai đến một điểm này để
+bạn tạo một mục tiêu gắn kết và một tệp
+hệ thống và bước tiếp theo bạn phải
+làm là gắn kết chúng vào một trường hợp cố gắng
+Ở Áo ngay để bạn khởi động một
+ví dụ bạn biết cài đặt một số
+các tiện ích và nếu các tiện ích nếu chúng
+không ở đó và sau đó bạn chỉ cần gắn kết
+họ quá trình thực sự
+đơn giản bạn, chúng tôi vừa thấy điều này
+Gắn kết lệnh ở đây bạn tạo một
+ví dụ bạn cài đặt một số NF này
+các tiện ích bạn tạo một điểm gắn kết và
+Sau đó, bạn bạn gắn kết bạn, bạn gắn kết
+Hệ thống tập tin với Mount Argot ở đây
+Để chia sẻ đường dẫn xuất khẩu trên đây
+thư mục cục bộ trong trường hợp của bạn để
+điểm năng lượng gắn trên ví dụ của bạn
+Và đó là cách đơn giản để sử dụng như vậy
+Với điều đó, hãy để tôi nhảy qua
+Bảng điều khiển và chỉ cho bạn một bản demo nhanh về cách
+Dịch vụ lưu trữ tệp nhấn mạnh hoạt động trong
+hành động cảm ơn bạn đã tham gia cơ thể này
+Xin chào mọi người chào mừng bạn đến với mô -đun này
+nơi chúng tôi
