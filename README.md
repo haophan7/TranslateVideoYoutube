@@ -21,7 +21,8 @@
 C:\Users\Hao\PycharmProjects\TranslateVideoYoutube\main\main.exe
 ```
 
-Người dùng cần phải cài đặt các module cần thiết để chạy được file trên: [python.org]([https://www.python.org/doc/])
+Người dùng cần phải cài đặt các module cần thiết để chạy được file trên, có thể xem tham khảo ở link sau: 
+https://www.python.org/doc/
 
 ## Build source code:
 Thông tin về source code:
